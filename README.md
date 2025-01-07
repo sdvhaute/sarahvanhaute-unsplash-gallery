@@ -14,6 +14,7 @@
    ```
 4. Create a .env file: Copy the provided .env.example file and rename it to .env. 
    Then, replace your_unsplash_access_key_here with your actual Unsplash Access Key.
+   (Ensure there are no quotes nor spaces)
    ```bash
    cp .env.example .env
    ```

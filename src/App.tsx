@@ -49,7 +49,6 @@ function App() {
         page === 1 ? newThumbnails : [...prevThumbnails, ...newThumbnails]
       );
 
-      // If less than `per_page` results are returned, there are no more results.
       setHasMore(newThumbnails.length === 15);
     } catch (error: unknown) {
       if (axios.isAxiosError(error) && error.response?.status === 403) {
@@ -112,7 +111,6 @@ function App() {
     { label: 'Teal', value: 'teal' },
   ];
 
-
   return (
     <div className="app">
       <header>
@@ -133,7 +131,6 @@ function App() {
             value={selectedColor}
             onChange={(e) => setSelectedColor(e.target.value)}
           />
-
           <button className="clear-filters-button" onClick={clearFilters}>
             Clear Filters
           </button>
