@@ -18,8 +18,6 @@ export interface Thumbnail {
   color: string;
 }
 
-const UNSPLASH_ACCESS_KEY = "8K6oiJCE1oetqjnT1jESPjt9-pn3WBBw6t9DPlI5MII";
-
 function App() {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
@@ -41,7 +39,7 @@ function App() {
             per_page: 15,
             page,
             color: selectedColor || undefined,
-            client_id: UNSPLASH_ACCESS_KEY,
+            client_id: import.meta.env.VITE_UNSPLASH_ACCESS_KEY,
           },
         }
       );
