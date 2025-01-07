@@ -12,15 +12,20 @@
    ```bash
    npm install
    ```
-4. Clear vite
+4. Create a .env file: Copy the provided .env.example file and rename it to .env. 
+   Then, replace your_unsplash_access_key_here with your actual Unsplash Access Key.
+   ```bash
+   cp .env.example .env
+   ```
+5. Clear vite
    ```bash
    rm -rf node_modules/.vite
    ```
-5. Run the application locally:
+6. Run the application locally:
    ```bash
    npm run dev
    ```
-6. Visit `http://localhost:5173` in your browser to see the app in action.
+7. Visit `http://localhost:5173` in your browser to see the app in action.
 
 If issues with Vite (`504 (Outdated Optimize Dep)`), run:
    ```bash
