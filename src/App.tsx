@@ -30,6 +30,7 @@ function App() {
 
   const fetchThumbnails = useCallback(async () => {
     setLoading(true);
+    setError('');
     try {
       const response = await axios.get<{ results: Thumbnail[] }>(
         'https://api.unsplash.com/search/photos',
@@ -144,7 +145,7 @@ function App() {
           next={loadMoreImages}
           hasMore={hasMore && !loading}
           loader={thumbnails.length > 0 ? <div className="spinner">Loading...</div> : null}
-          endMessage={<div>That's all we could find! Try a new search or adjust the filters for more inspiration.</div>}
+          endMessage={!error && <div>That's all we could find! Try a new search or adjust the filters for more inspiration.</div>}
         >
           <div className="grid">
             {thumbnails.map((thumbnail, index) => (
