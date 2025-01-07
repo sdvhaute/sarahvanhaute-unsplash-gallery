@@ -1,0 +1,17 @@
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter label {
+    font-size: 16px;
+}
+
+.filter select {
+    height: 30px;
+    padding: 5px;
+    margin: 0 5px;
+    font-size: 14px;
+}
