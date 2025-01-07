@@ -145,7 +145,7 @@ function App() {
           next={loadMoreImages}
           hasMore={hasMore && !loading}
           loader={thumbnails.length > 0 ? <div className="spinner">Loading...</div> : null}
-          endMessage={!error && <div>That's all we could find! Try a new search or adjust the filters for more inspiration.</div>}
+          endMessage={!error && !loading && <div>That's all we could find! Try a new search or adjust the filters for more inspiration.</div>}
         >
           <div className="grid">
             {thumbnails.map((thumbnail, index) => (
