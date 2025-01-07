@@ -77,8 +77,9 @@ function App() {
 
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
-  };
+    const value = event.target.value.trimStart();
+    setSearchTerm(value);
+  };;
 
   const handleThumbnailClick = (imageUrl: string) => {
     setSelectedImage(imageUrl);
@@ -143,7 +144,7 @@ function App() {
           next={loadMoreImages}
           hasMore={hasMore && !loading}
           loader={thumbnails.length > 0 ? <div className="spinner">Loading...</div> : null}
-          endMessage={<div>No more images to load</div>}
+          endMessage={<div>That's all we could find! Try a new search or adjust the filters for more inspiration.</div>}
         >
           <div className="grid">
             {thumbnails.map((thumbnail, index) => (
