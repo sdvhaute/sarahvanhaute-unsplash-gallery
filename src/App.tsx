@@ -32,11 +32,13 @@ function App() {
     setLoading(true);
     setError('');
     try {
+      const cleanedSearchTerm = searchTerm.split(' ').filter(Boolean).join(',');
+
       const response = await axios.get<{ results: Thumbnail[] }>(
         'https://api.unsplash.com/search/photos',
         {
           params: {
-            query: searchTerm || 'random',
+            query: cleanedSearchTerm || 'random',
             per_page: 15,
             page,
             color: selectedColor || undefined,
@@ -63,8 +65,6 @@ function App() {
       setLoading(false);
     }
   }, [searchTerm, selectedColor, page]);
-
-
 
   useEffect(() => {
     setThumbnails([]);
